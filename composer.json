@@ -1,0 +1,25 @@
+{
+    "name": "jt/jtoauth",
+    "description": "JT OAuth v2 authorisation library",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "nvb",
+            "email": "nvb@aproxima.ru"
+        }
+    ],
+	"autoload" : {
+		"psr-4" : {
+			"JT\\JTOAuth\\" : "src/"
+		}
+	},
+    "require": {
+        "lusitanian/oauth": "^0.8.9",
+        "symfony/http-foundation": "~2.8"
+    },
+    "require-dev": {
+        "psr/log": "^1.0@dev"
+    },
+    "minimum-stability": "dev"
+}
