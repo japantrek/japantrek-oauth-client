@@ -10,42 +10,42 @@ class JTOAuthUser
      * @var integer
      */
     protected $id;
-    
+
     /**
      * @var string
      */
     protected $firstName;
-    
+
     /**
      * @var string
      */
     protected $secondName;
-    
+
     /**
      * @var string
      */
     protected $lastName;
-    
+
     /**
      * @var string
      */
     protected $company;
-    
+
     /**
      * @var string
      */
     protected $mail;
-    
+
     /**
      * @var string
      */
     protected $phone;
-    
+
     /**
      * @var array
      */
     protected $roles;
-    
+
     /**
      * @param integer $id
      * @param string  $firstName
@@ -76,7 +76,7 @@ class JTOAuthUser
         $this->phone = $phone;
         $this->roles = $roles;
     }
-    
+
     /**
      * @return integer
      */
@@ -84,7 +84,7 @@ class JTOAuthUser
     {
         return $this->id;
     }
-    
+
     /**
      * @return string
      */
@@ -92,7 +92,7 @@ class JTOAuthUser
     {
         return $this->firstName;
     }
-    
+
     /**
      * @return string
      */
@@ -100,7 +100,7 @@ class JTOAuthUser
     {
         return $this->secondName;
     }
-    
+
     /**
      * @return string
      */
@@ -108,7 +108,7 @@ class JTOAuthUser
     {
         return $this->lastName;
     }
-    
+
     /**
      * @return string
      */
@@ -116,7 +116,7 @@ class JTOAuthUser
     {
         return $this->company;
     }
-    
+
     /**
      * @return string
      */
@@ -124,7 +124,7 @@ class JTOAuthUser
     {
         return $this->mail;
     }
-    
+
     /**
      * @return string
      */
@@ -132,7 +132,7 @@ class JTOAuthUser
     {
         return $this->phone;
     }
-    
+
     /**
      * @return roles
      */

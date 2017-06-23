@@ -14,13 +14,13 @@ class OAuthConfig
     protected $oauthRedirectUrl;
     protected $oauthUrl;
     protected $oauthScopes;
-    
+
     /**
      * @param string $oauthId
      * @param string $oauthSecret
      * @param string $oauthRedirectUrl
      * @param array  $oauthScopes
-     * @param string $oauthUrl     
+     * @param string $oauthUrl
      */
     public function __construct($oauthId, $oauthSecret, $oauthRedirectUrl, $oauthScopes= array(), $oauthUrl= 'https://cars.japantrek.ru')
     {
@@ -30,7 +30,7 @@ class OAuthConfig
         $this->oauthUrl= new Uri($oauthUrl);
         $this->oauthScopes= $oauthScopes;
     }
-    
+
     /**
      * @return string
      */
@@ -38,7 +38,7 @@ class OAuthConfig
     {
         return $this->oauthId;
     }
-    
+
     /**
      * @return string
      */
@@ -46,7 +46,7 @@ class OAuthConfig
     {
         return $this->oauthSecret;
     }
-    
+
     /**
      * @return Uri
      */
@@ -54,7 +54,7 @@ class OAuthConfig
     {
         return $this->oauthRedirectUrl;
     }
-    
+
     /**
      * @return Uri
      */
@@ -62,7 +62,7 @@ class OAuthConfig
     {
         return $this->oauthUrl;
     }
-    
+
     /**
      * @return array
      */
