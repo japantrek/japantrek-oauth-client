@@ -18,13 +18,11 @@ class JTOAuthService extends AbstractService
 {
 
     /**
-     * @param CredentialsInterface 	$credentials
-     * @param ClientInterface 		$httpClient
+     * @param CredentialsInterface  $credentials
+     * @param ClientInterface       $httpClient
      * @param TokenStorageInterface $storage
-     * @param array 				$scopes
-     * @param UriInterface 			$baseApiUri
-     * @param string 				$stateParameterInAutUrl
-     * @param string 				$apiVersion
+     * @param array                 $scopes
+     * @param UriInterface          $baseApiUri
      */
     public function __construct(
         CredentialsInterface $credentials,
@@ -32,7 +30,7 @@ class JTOAuthService extends AbstractService
         TokenStorageInterface $storage,
         $scopes = array(),
         UriInterface $baseApiUri = null
-	)
+    )
     {
         parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri ?: new Uri('https://cars.japantrek.ru'), true);
     }
@@ -88,13 +86,13 @@ class JTOAuthService extends AbstractService
     {
         return static::AUTHORIZATION_METHOD_HEADER_BEARER;
     }
-    
+
     /**
      * {@inheritDoc}
      * @see AbstractService::isValidScope()
      */
     public function isValidScope($scope)
     {
-    	return true;
+        return true;
     }
 }

@@ -17,31 +17,31 @@ $config = new OAuthConfig($settings['jt_id'], $settings['jt_secret'], $request->
 $authManager = new OAuthManager($config, $request);
 
 switch ($request->getPathInfo()) {
-	case '/check':
-		if ($authManager->processResponse()) {
-			$response = new RedirectResponse($request->getUriForPath('/'));
-			$response->send();
-		} else {
-			echo '<h1>Ошибка</h1>', '<p>', $authManager->getLastError(), '</p>';
-		}
-		break;
-	case '/auth':
-		$authManager->startAuthorisationProcess();
-		break;
-	case '/':
-		
-		?>
-		<html>
-			<head><title>Пример использования JTOAuth</title></head>
-			<body>
-				<p>Сейчас авторизован: <?php if ($authManager->isAuthorised()): ?><b style="color: green">ДА</b><?php else:?><b style="color: red">НЕТ</b><?php endif ?></p>
-				<?php if ($authManager->isAuthorised()): ?>
-					<?php var_dump($authManager->getUser()) ?>
-				<?php else: ?>
-					<p><a href="<?php echo $request->getUriForPath('/auth') ?>">Начать авторизацию</a></p>
-				<?php endif ?>
-			</body>
-		</html>
-		<?php 		
-		break;		
+    case '/check':
+        if ($authManager->processResponse()) {
+            $response = new RedirectResponse($request->getUriForPath('/'));
+            $response->send();
+        } else {
+            echo '<h1>Ошибка</h1>', '<p>', $authManager->getLastError(), '</p>';
+        }
+        break;
+    case '/auth':
+        $authManager->startAuthorisationProcess();
+        break;
+    case '/':
+
+        ?>
+        <html>
+            <head><title>Пример использования JTOAuth</title></head>
+            <body>
+                <p>Сейчас авторизован: <?php if ($authManager->isAuthorised()): ?><b style="color: green">ДА</b><?php else:?><b style="color: red">НЕТ</b><?php endif ?></p>
+                <?php if ($authManager->isAuthorised()): ?>
+                    <?php var_dump($authManager->getUser()) ?>
+                <?php else: ?>
+                    <p><a href="<?php echo $request->getUriForPath('/auth') ?>">Начать авторизацию</a></p>
+                <?php endif ?>
+            </body>
+        </html>
+        <?php
+        break;
 }
