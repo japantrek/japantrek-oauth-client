@@ -1,17 +1,17 @@
 <?php
 namespace JT\JTOAuth;
 
-use Symfony\Component\HttpFoundation\Request;
-use OAuth\ServiceFactory;
 use OAuth\Common\Consumer\Credentials;
-use OAuth\Common\Storage\SymfonySession;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use OAuth\Common\Http\Exception\TokenResponseException;
 use OAuth\Common\Storage\Exception\TokenNotFoundException;
-use Psr\Log\LoggerInterface;
+use OAuth\Common\Storage\SymfonySession;
 use OAuth\Common\Token\Exception\ExpiredTokenException;
 use OAuth\OAuth2\Service\Exception\InvalidAuthorizationStateException;
-use OAuth\Common\Http\Exception\TokenResponseException;
+use OAuth\ServiceFactory;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @author nvb <nvb@aproxima.ru>
@@ -110,6 +110,8 @@ class OAuthManager
                         $data['phone'],
                         $data['roles']
                     );
+
+                    $this->request->getSession()->set('jtoauth_user', $this->user);
                 }
             } catch (TokenResponseException $e) {
                 $this->error = $e->getMessage();
