@@ -124,13 +124,13 @@ class OAuthManager
                 $this->user = false;
             } catch (TokenNotFoundException $e) {
                 if ($this->logger) {
-                    $this->logger->warning('AccessToken not found');
+                    $this->logger->notice('AccessToken not found');
                 }
 
                 $this->user = false;
             } catch (ExpiredTokenException $e) {
                 if ($this->logger) {
-                    $this->logger->notice('AccessToken expired');
+                    $this->logger->debug('AccessToken expired');
                 }
 
                 $this->user = false;
